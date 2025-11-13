@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mobile Legends portal: qahramonlar, buildlar, skinlar va qo‘llanmalar bilan to‘liq interaktiv sayt."
+    />
+    <meta
+      name="keywords"
+      content="Mobile Legends, build, hero, skin, guide, MLBB, strategiya"
+    />
+    <meta name="author" content="MurodbekDev" />
+    <title>Mobile Legends Portal</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body
+    class="bg-slate-950 text-slate-100 overflow-x-hidden select-none"
+    data-theme="dark"
+  >
+    <!-- Interaktiv navigatsiya paneli -->
+    <header
+      id="navbar"
+      class="fixed top-0 inset-x-0 z-50 backdrop-blur bg-slate-950/70 border-b border-indigo-500/30 transition-all duration-500"
+    >
+      <div
+        class="max-w-7xl mx-auto flex items-center justify-between px-4 py-4"
+      >
+        <a href="#home" class="flex items-center gap-3 group">
+          <div class="relative h-12 w-12 rounded-full overflow-hidden shadow-lg shadow-blue-500/40 border border-blue-500/60">
+            <img
+              src="https://pic.rutubelist.ru/userappearance/f5/80/f580b599ec80e7d320fdc3ae9c9d7c74.jpeg"
+              alt="Mobile Legends Portal profili"
+              class="h-full w-full object-cover"
+            />
+          </div>
+          <div>
+            <p class="text-xs uppercase tracking-[0.35em] text-blue-400/70">
+              Mobile Legends
+            </p>
+            <h1 class="text-lg font-orbitron font-semibold text-blue-100">
+              ML Portal
+            </h1>
+          </div>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 font-medium">
+          <a href="#home" class="nav-link active">Asosiy</a>
+          <a href="#heroes" class="nav-link">Qahramonlar</a>
+          <a href="#builds" class="nav-link">Buldlar</a>
+          <a href="#skins" class="nav-link">Skinlar</a>
+          <a href="#guides" class="nav-link">Qo‘llanmalar</a>
+          <a href="#community" class="nav-link">Jamoa</a>
+          <a href="#contact" class="nav-link">Aloqa</a>
+        </nav>
+        <button
+          id="mobile-menu-toggle"
+          class="md:hidden inline-flex items-center justify-center h-12 w-12 rounded-full border border-blue-500/40 bg-blue-500/10 text-blue-200 hover:bg-blue-500/20 transition"
+          aria-label="Mobil menyuni ochish"
+        >
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 5.75h16.5M3.75 12h16.5M3.75 18.25h16.5"
+            />
+          </svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="md:hidden max-h-0 overflow-hidden transition-all">
+        <nav class="px-6 pb-6 space-y-3 text-sm">
+          <a href="#home" class="mobile-link">Asosiy</a>
+          <a href="#heroes" class="mobile-link">Qahramonlar</a>
+          <a href="#builds" class="mobile-link">Buldlar</a>
+          <a href="#skins" class="mobile-link">Skinlar</a>
+          <a href="#guides" class="mobile-link">Qo‘llanmalar</a>
+          <a href="#community" class="mobile-link">Jamoa</a>
+          <a href="#contact" class="mobile-link">Aloqa</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="pt-32 relative">
+      <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.25),transparent_55%)] pointer-events-none"
+      ></div>
+
+      <!-- Asosiy sahifa -->
+      <section
+        id="home"
+        class="section observe min-h-screen flex items-center relative"
+      >
+        <div class="absolute inset-0">
+          <img
+            src="https://wallpapers.com/images/hd/mobile-legends-logo-over-earth-8ir7z2e4a2enyfzl.jpg"
+            alt="Mobile Legends logotipi va arena"
+            class="w-full h-full object-cover opacity-25"
+          />
+          <div class="absolute inset-0 bg-slate-950/80"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 py-12 grid lg:grid-cols-2 gap-12">
+          <div class="space-y-8">
+            <p class="uppercase tracking-[0.35em] text-blue-400 text-sm">
+              Mobile Legends Arena
+            </p>
+            <h2 class="text-4xl md:text-6xl font-orbitron font-semibold leading-tight">
+              Cheksiz janglar, <span class="text-blue-400">cheksiz imkoniyatlar</span>
+            </h2>
+            <p class="text-slate-300 max-w-xl">
+              Professional o‘yinchilar uchun yaratilgan interaktiv portal: qahramonlar statistikasi, yangi patch yangiliklari, eng yaxshi buldlar va jamoa tajribasi bitta joyda.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a href="#heroes" class="primary-btn">Qahramonlarni ko‘rish</a>
+              <a href="#builds" class="secondary-btn">Buldlarni tekshirish</a>
+              <a href="#skins" class="secondary-btn">Skinlar galereyasi</a>
+            </div>
+            <div class="mt-10 grid grid-cols-3 gap-6">
+              <div class="info-card">
+                <p class="text-sm text-slate-400 uppercase tracking-widest">
+                  Yangilanmoqda
+                </p>
+                <p class="text-2xl font-semibold">Patch 1.8.X</p>
+              </div>
+              <div class="info-card">
+                <p class="text-sm text-slate-400 uppercase tracking-widest">
+                  Rejimlar
+                </p>
+                <p class="text-2xl font-semibold">Ranked, Mythic</p>
+              </div>
+              <div class="info-card">
+                <p class="text-sm text-slate-400 uppercase tracking-widest">
+                  Arenalar
+                </p>
+                <p class="text-2xl font-semibold">5+ Taktika</p>
+              </div>
+            </div>
+          </div>
+          <div class="space-y-8">
+            <div
+              class="relative bg-slate-900/70 border border-blue-500/40 rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(37,99,235,0.3)]"
+            >
+              <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-purple-500/10 to-transparent"></div>
+              <div class="relative p-6">
+                <h3 class="text-xl font-semibold mb-4 flex items-center gap-3">
+                  <span class="h-3 w-3 rounded-full bg-blue-400 shadow shadow-blue-500/70 animate-pulse"></span>
+                  Qahramonlar Karuseli
+                </h3>
+                <div id="hero-carousel" class="carousel-container">
+                  <!-- JavaScript orqali to‘ldiriladi -->
+                </div>
+                <div class="flex items-center justify-between mt-6">
+                  <button class="carousel-btn" data-direction="prev">
+                    &larr; Oldingi
+                  </button>
+                  <button class="carousel-btn" data-direction="next">
+                    Keyingi &rarr;
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-6">
+              <article class="news-card">
+                <p class="text-xs uppercase tracking-[0.3em] text-blue-400/80">
+                  So‘nggi yangiliklar
+                </p>
+                <h4 class="text-lg font-semibold">M3 World Championship anons qilindi</h4>
+                <p class="text-sm text-slate-300/90">
+                  Yakshanba kuni global final bo‘lib o‘tadi, yangi skinlar ham taqdim qilinishi kutilmoqda.
+                </p>
+              </article>
+              <article class="news-card">
+                <p class="text-xs uppercase tracking-[0.3em] text-blue-400/80">
+                  Patch 1.8.X
+                </p>
+                <h4 class="text-lg font-semibold">Jungler meta qayta yozildi</h4>
+                <p class="text-sm text-slate-300/90">
+                  Baxia va Lancelot uchun yangi balance o‘zgarishlari, yangi emblem tizimi sinovdan o‘tmoqda.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Qahramonlar bo‘limi -->
+      <section id="heroes" class="section observe">
+        <div class="section-header">
+          <p class="section-subtitle">Sinflar va statistikalar</p>
+          <h2 class="section-title">Qahramonlar Ensiklopediyasi</h2>
+          <p class="section-description">
+            Har bir qahramonning mapdagi roli, skill to‘plami va tavsiya etilgan sozlamalar. Kartalarga bosib, batafsil ma’lumot va interaktiv animatsiyalarni ko‘ring.
+          </p>
+        </div>
+        <div id="hero-filters" class="flex flex-wrap gap-3 justify-center mb-10">
+          <!-- Filtr tugmalari JavaScript orqali -->
+        </div>
+        <div
+          id="hero-grid"
+          class="grid gap-6 sm:grid-cols-2 xl:grid-cols-3 max-w-7xl mx-auto"
+        >
+          <!-- Qahramon kartalari JavaScript orqali -->
+        </div>
+      </section>
+
+      <!-- Buldlar bo‘limi -->
+      <section id="builds" class="section observe">
+        <div class="section-header">
+          <p class="section-subtitle">Eng yaxshi konfiguratsiyalar</p>
+          <h2 class="section-title">Meta buldlar va item kombinatsiyalari</h2>
+          <p class="section-description">
+            Qahramonni tanlang va eng yuqori win-rate ko‘rsatgan buld kombinatsiyalarini ko‘rib chiqing. Har bir item qanday effekt berishini mini tavsiflar orqali bilib oling.
+          </p>
+        </div>
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="flex flex-wrap gap-4 justify-between items-center mb-8">
+            <select
+              id="build-hero-select"
+              class="select"
+              aria-label="Qahramon tanlash"
+            >
+              <!-- JavaScript orqali to‘ldiriladi -->
+            </select>
+            <div class="flex flex-wrap gap-3" id="build-type-filters">
+              <!-- JavaScript orqali to‘ldiriladi -->
+            </div>
+          </div>
+          <div
+            id="build-list"
+            class="grid gap-6 lg:grid-cols-2 xl:grid-cols-3"
+          >
+            <!-- JavaScript orqali to‘ldiriladi -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Skinlar bo‘limi -->
+      <section id="skins" class="section observe">
+        <div class="section-header">
+          <p class="section-subtitle">Vizual evolyutsiya</p>
+          <h2 class="section-title">Skinlar galereyasi</h2>
+          <p class="section-description">
+            Har qahramonning eng mashhur skinlarini ko‘ring. Hover qilganda animatsiya yoki video preview paydo bo‘ladi.
+          </p>
+        </div>
+        <div
+          id="skin-gallery"
+          class="grid gap-6 sm:grid-cols-2 xl:grid-cols-3 max-w-7xl mx-auto"
+        >
+          <!-- JavaScript orqali to‘ldiriladi -->
+        </div>
+      </section>
+
+      <!-- Qo‘llanmalar bo‘limi -->
+      <section id="guides" class="section observe">
+        <div class="section-header">
+          <p class="section-subtitle">Strategiyalar va professional maslahatlar</p>
+          <h2 class="section-title">O‘yin qo‘llanmalar banki</h2>
+          <p class="section-description">
+            Xarita kontroli, jamoaviy janglar, counter picks va professional o‘yinchilardan olingan tajribalar. Grafik va diagrammalar bilan boyitilgan qo‘llanmalar.
+          </p>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 grid gap-6 lg:grid-cols-3">
+          <article class="guide-card">
+            <h3 class="text-xl font-semibold mb-3">Lane nazorati va rotatsiya</h3>
+            <p>
+              Mid, Gold va EXP lane uchun optimal rotatsiya va wave management strategiyalari. Har bir bosqichda qaysi skillni ustuvor qilish kerakligini bilib oling.
+            </p>
+            <ul class="guide-list">
+              <li>Level 1-3 agressiya darajasi</li>
+              <li>Ultimate sinxronizatsiyasi</li>
+              <li>Objective uchun vaqt management</li>
+            </ul>
+          </article>
+          <article class="guide-card">
+            <h3 class="text-xl font-semibold mb-3">Jamoaviy taktikalar</h3>
+            <p>
+              1-3-1 va 2-1-2 formatdagi jamoa tuzilmalari, push strategiyalari va counter-initiate uslublarini amaliy misollar bilan o‘rganing.
+            </p>
+            <ul class="guide-list">
+              <li>Teamfight boshlash ketma-ketligi</li>
+              <li>Disengage va re-engage strategiyasi</li>
+              <li>Macro play va vision nazorati</li>
+            </ul>
+          </article>
+          <article class="guide-card">
+            <h3 class="text-xl font-semibold mb-3">Counter picks va emblem</h3>
+            <p>
+              Qaysi qahramon kimgadir qarshi kuchli yoki zaifligini jadval asosida ko‘ring. Emblem va spell tanlashda meta tavsiyalar.
+            </p>
+            <ul class="guide-list">
+              <li>Marksmanlarga qarshi assassin picklari</li>
+              <li>Tanklarni "burst" qilish uchun magic kombinatsiyalar</li>
+              <li>Emblem sinergetik effektlari</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- Jamoa sahifasi -->
+      <section id="community" class="section observe">
+        <div class="section-header">
+          <p class="section-subtitle">Jamoaviy hamkorlik</p>
+          <h2 class="section-title">Jamoa va Top 10 qahramon</h2>
+          <p class="section-description">
+            Nafaqat o‘rganing, balki o‘z tajribangizni ulashing. Jamoa buldlarini baholang, eng yaxshi qahramonlarni kuzatib boring va meta o‘zgarishlarini real vaqt rejimida ko‘ring.
+          </p>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 grid gap-8 xl:grid-cols-[2fr_1fr]">
+          <div class="community-card">
+            <h3 class="text-2xl font-semibold mb-4 flex items-center gap-3">
+              Jamoa buldlari
+              <span class="badge">Yangi</span>
+            </h3>
+            <p class="text-slate-300 mb-6">
+              Jamoa bilan o‘z buildlaringizni bo‘lishing, boshqalarnikiga ovoz bering va meta bo‘yicha fikr almashing.
+            </p>
+            <form id="build-form" class="grid gap-4 md:grid-cols-2">
+              <div class="form-group">
+                <label for="player-name">O‘yinchi ismi</label>
+                <input id="player-name" type="text" placeholder="Murodbek" />
+              </div>
+              <div class="form-group">
+                <label for="player-hero">Qahramon</label>
+                <select id="player-hero"></select>
+              </div>
+              <div class="form-group md:col-span-2">
+                <label for="build-details">Build tavsifi</label>
+                <textarea
+                  id="build-details"
+                  rows="3"
+                  placeholder="Ling uchun burst build, Demon Hunter + Golden Staff..."
+                ></textarea>
+              </div>
+              <button type="submit" class="primary-btn md:col-span-2">
+                Buildni yuborish
+              </button>
+            </form>
+            <div id="community-builds" class="mt-8 space-y-4">
+              <!-- Jamoa buildlari JavaScript orqali -->
+            </div>
+          </div>
+          <aside class="top-heroes-card">
+            <h3 class="text-xl font-semibold mb-4">Top 10 qahramon</h3>
+            <ol id="top-heroes" class="space-y-3 list-decimal list-inside text-slate-200">
+              <!-- JavaScript orqali to‘ldiriladi -->
+            </ol>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Aloqa va ijtimoiy tarmoqlar -->
+      <section id="contact" class="section observe">
+        <div class="section-header">
+          <p class="section-subtitle">Bog‘laning va kuzating</p>
+          <h2 class="section-title">Aloqa va eSports jamoalari</h2>
+          <p class="section-description">
+            Mobile Legends haqidagi eng so‘nggi eSports yangiliklarini kuzatish va jamoadan yordam olish uchun pastdagi ma’lumotlardan foydalaning.
+          </p>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 grid gap-10 lg:grid-cols-2">
+          <div class="contact-card">
+            <h3 class="text-xl font-semibold mb-4">O‘yin haqida</h3>
+            <p class="text-slate-300 mb-6">
+              Mobile Legends: Bang Bang — mobil MOBA janridagi eng mashhur o‘yinlardan biri. Portalimiz orqali siz meta yangiliklari, professional tavsiyalar va kuchli buildlarni topishingiz mumkin.
+            </p>
+            <div class="grid gap-4">
+              <div>
+                <h4 class="text-lg font-semibold text-blue-300">
+                  eSports jamoalari
+                </h4>
+                <ul class="space-y-2 text-slate-300">
+                  <li>Blacklist International</li>
+                  <li>Echo Philippines</li>
+                  <li>RRQ Hoshi</li>
+                  <li>EVOS Legends</li>
+                  <li>ONIC Esports</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <h3 class="text-xl font-semibold mb-4">Bog‘lanish</h3>
+            <p class="text-slate-300 mb-6">
+              Savollar, hamkorlik va jamoa takliflari uchun ijtimoiy tarmoqlarimizni kuzating.
+            </p>
+            <div class="grid gap-4">
+              <a class="contact-link" href="#" target="_blank" rel="noreferrer">
+                <span>YouTube</span>
+                <span>@MLPortalOfficial</span>
+              </a>
+              <a class="contact-link" href="#" target="_blank" rel="noreferrer">
+                <span>Instagram</span>
+                <span>@ml_portal</span>
+              </a>
+              <a class="contact-link" href="#" target="_blank" rel="noreferrer">
+                <span>TikTok</span>
+                <span>@mlbb_tricks</span>
+              </a>
+              <a class="contact-link" href="#" target="_blank" rel="noreferrer">
+                <span>Discord</span>
+                <span>discord.gg/mlportal</span>
+              </a>
+              <a class="contact-link" href="#" target="_blank" rel="noreferrer">
+                <span>Telegram</span>
+                <span>@mlcommunity</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="mt-20 border-t border-blue-500/40 bg-slate-950/80 backdrop-blur py-10"
+    >
+      <div class="max-w-7xl mx-auto px-6 text-center space-y-4">
+        <p class="uppercase tracking-[0.35em] text-xs text-slate-400">
+          Bizni kuzating
+        </p>
+        <div class="flex justify-center gap-6 text-slate-300 text-sm">
+          <a class="footer-link" href="#" target="_blank">YouTube</a>
+          <a class="footer-link" href="#" target="_blank">Instagram</a>
+          <a class="footer-link" href="#" target="_blank">TikTok</a>
+          <a class="footer-link" href="#" target="_blank">Discord</a>
+          <a class="footer-link" href="#" target="_blank">Telegram</a>
+        </div>
+        <p class="text-xs text-slate-400">
+          © 2025 Mobile Legends Portal. Barcha huquqlar himoyalangan.
+        </p>
+        <p class="text-sm text-blue-300">
+          Saytni ishlab chiqqan: MurodbekDev — Mobile Legends jamoasi uchun.
+        </p>
+      </div>
+    </footer>
+
+    <script src="assets/script.js"></script>
+  </body>
+</html>
+

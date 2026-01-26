@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="uz" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLBB Portal | Professional Hero Database</title>
+    <meta name="description" content="Mobile Legends: Bang Bang barcha qahramonlar, buildlar va strategiyalar bazasi.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="bg-slate-950 text-slate-100">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center font-orbitron font-black text-xl italic shadow-lg shadow-blue-500/50">M</div>
+                <span class="font-orbitron font-black tracking-tighter text-xl">PORTAL</span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#home" class="nav-link active">Asosiy</a>
+                <a href="#heroes" class="nav-link">Qahramonlar</a>
+                <a href="#guides" class="nav-link">Qo'llanmalar</a>
+                <a href="#community" class="nav-link">Jamoa</a>
+            </div>
+
+            <button class="md:hidden w-12 h-12 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10" id="mobile-menu-btn">
+                <i class="fa-solid fa-bars-staggered text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+            <div class="hero-glow"></div>
+            <div class="section relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8 animate-fadeInUp">
+                    <span class="section-subtitle">Mobile Legends Arena</span>
+                    <h1 class="section-title">Cheksiz Janglar,<br><span class="text-blue-500">Professional</span> Tajriba</h1>
+                    <p class="text-slate-400 text-lg max-w-lg">120+ qahramonlar, real-vaqt statistikalar va professional buildlar. O'yiningizni yangi darajaga olib chiqing.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#heroes" class="btn btn-primary">Qahramonlarni ko'rish <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#guides" class="btn btn-secondary">Strategiyalar</a>
+                    </div>
+                </div>
+                
+                <div class="relative hidden lg:block">
+                    <div class="absolute inset-0 bg-blue-500/20 rounded-full blur-[120px]"></div>
+                    <img src="https://wallpapers.com/images/hd/mobile-legends-logo-over-earth-8ir7z2e4a2enyfzl.jpg" alt="MLBB Arena" class="rounded-[4rem] border border-white/10 shadow-2xl relative z-10 opacity-80">
+                </div>
+            </div>
+        </section>
+
+        <!-- Heroes Section -->
+        <section id="heroes" class="section">
+            <div class="section-header">
+                <span class="section-subtitle">Ma'lumotlar Bazasi</span>
+                <h2 class="section-title">Qahramonlar</h2>
+                <p class="section-description">Barcha MLBB qahramonlari haqida to'liq ma'lumot, skillar statistikalar va tavsiyalar.</p>
+            </div>
+
+            <div class="controls-container">
+                <div class="search-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="hero-search" placeholder="Qahramon ismini yozing..." class="search-input">
+                </div>
+                
+                <div class="filter-chips" id="role-filters">
+                    <button class="chip active" data-role="all">Hammasi</button>
+                    <button class="chip" data-role="Tank">Tank</button>
+                    <button class="chip" data-role="Fighter">Fighter</button>
+                    <button class="chip" data-role="Assassin">Assassin</button>
+                    <button class="chip" data-role="Mage">Mage</button>
+                    <button class="chip" data-role="Marksman">Marksman</button>
+                    <button class="chip" data-role="Support">Support</button>
+                </div>
+            </div>
+
+            <div id="hero-grid">
+                <!-- Data loaded via JS -->
+                <div class="col-span-full flex flex-col items-center py-20 opacity-50">
+                    <div class="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mb-4"></div>
+                    <p>Qahramonlar yuklanmoqda...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community & Guides Placeholder -->
+        <section id="guides" class="section bg-slate-900/30">
+            <div class="section-header">
+                <span class="section-subtitle">Mastery</span>
+                <h2 class="section-title">Strategiyalar</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-[2.5rem] border border-white/5 space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-500/20 flex items-center justify-center text-blue-500 text-xl"><i class="fa-solid fa-map"></i></div>
+                    <h3 class="text-xl font-bold">Xarita Nazorati</h3>
+                    <p class="text-slate-400">Professional rotatsiya va lane management sirlari.</p>
+                </div>
+                <div class="glass p-8 rounded-[2.5rem] border border-white/5 space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-500/20 flex items-center justify-center text-purple-500 text-xl"><i class="fa-solid fa-bolt"></i></div>
+                    <h3 class="text-xl font-bold">Counter Picks</h3>
+                    <p class="text-slate-400">Har bir qahramonga qarshi eng yaxshi drafni tanlang.</p>
+                </div>
+                <div class="glass p-8 rounded-[2.5rem] border border-white/5 space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-rose-500/20 flex items-center justify-center text-rose-500 text-xl"><i class="fa-solid fa-shield-heart"></i></div>
+                    <h3 class="text-xl font-bold">Meta Buildlar</h3>
+                    <p class="text-slate-400">Oxirgi patchdagi eng kuchli item kombinatsiyalari.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="hero-modal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+            <div id="modal-body">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-20 border-t border-white/5 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-6 text-center space-y-8">
+            <div class="font-orbitron font-black text-2xl tracking-tighter">ML PORTAL</div>
+            <div class="flex justify-center gap-8 text-2xl text-slate-500">
+                <a href="#" class="hover:text-blue-500 transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="hover:text-pink-500 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-sky-500 transition-colors"><i class="fa-brands fa-discord"></i></a>
+                <a href="#" class="hover:text-blue-400 transition-colors"><i class="fa-brands fa-telegram"></i></a>
+            </div>
+            <p class="text-slate-500 text-sm">© 2026 Mobile Legends Portal. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>

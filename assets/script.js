@@ -89,6 +89,25 @@ function initControls() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeHeroModal();
   });
+
+  // Community Form
+  const buildForm = document.getElementById('build-form');
+  if (buildForm) {
+    buildForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Build qabul qilindi! Rahmat.');
+      buildForm.reset();
+    });
+  }
+
+  // Mobile Menu
+  const mobileBtn = document.getElementById('mobile-menu-btn');
+  if (mobileBtn) {
+    mobileBtn.addEventListener('click', () => {
+      // For simplicity, just scroll to heroes
+      document.getElementById('heroes').scrollIntoView();
+    });
+  }
 }
 
 // Filter Logic

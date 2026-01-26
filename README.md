@@ -9,12 +9,16 @@ A modern, fast, and professional Hero Database for Mobile Legends: Bang Bang.
 - **Responsive**: Fully optimized for mobile, tablet, and desktop.
 - **Fast Performance**: Static site with localized JSON database.
 
-## 🚀 Deployment on Vercel
-This project is pre-configured for **one-click deployment** on Vercel:
+## 🚀 Deployment
+### Vercel (Recommended for Static)
 1. Push this repository to GitHub.
-2. Go to [Vercel](https://vercel.com) and click "Add New" -> "Project".
-3. Import this repository.
-4. Click **Deploy**. Vercel will automatically host the `index.html` at the root.
+2. Import to [Vercel](https://vercel.com). It will automatically detect `index.html`.
+
+### Railway (Self-hosted Node)
+This project is also compatible with Railway:
+1. Push this repository to GitHub.
+2. Go to [Railway](https://railway.app), click "New Project" -> "Deploy from GitHub repo".
+3. Railway will detect the `package.json`, install dependencies, and run the Express server automatically.
 
 ## 🛠️ How to update data
 If you want to update the hero list in the future (e.g., when a new hero is released):

@@ -1,0 +1,25 @@
+{
+  "name": "mbl",
+  "version": "1.0.0",
+  "description": "A modern, fast, and professional Hero Database for Mobile Legends: Bang Bang.",
+  "main": "fetch_heroes.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MurodbekUZ/mbl.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/MurodbekUZ/mbl/issues"
+  },
+  "homepage": "https://github.com/MurodbekUZ/mbl#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

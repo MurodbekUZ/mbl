@@ -51,7 +51,7 @@ async function main() {
             await new Promise(r => setTimeout(r, 100));
         }
 
-        const outputPath = path.join(__dirname, 'mobile-legends', 'data', 'heroes.json');
+        const outputPath = path.join(__dirname, 'data', 'heroes.json');
         fs.writeFileSync(outputPath, JSON.stringify(allHeroDetails, null, 2));
         console.log(`Successfully saved ${allHeroDetails.length} heroes to ${outputPath}`);
     } catch (error) {

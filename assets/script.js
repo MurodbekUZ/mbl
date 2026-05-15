@@ -51,18 +51,9 @@
     setupHomeStats();
 
     try {
-      const res = await fetch('data/heroes.json');
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      state.heroes = await res.json();
-
-      try {
-        const notesRes = await fetch('heroes-list.md');
-        if (notesRes.ok) {
-          hydrateHeroNotes(await notesRes.text());
-        }
-      } catch (notesErr) {
-        console.warn('Heroes notes load skipped:', notesErr);
-      }
+      state.heroes = await loadHeroes();
+      const notesText = await loadNotes();
+      if (notesText) hydrateHeroNotes(notesText);
 
       onDataLoaded();
     } catch (err) {
@@ -654,6 +645,40 @@
 
   function normalizeName(name) {
     return String(name || '').trim().toLowerCase();
+  }
+
+  async function loadHeroes() {
+    if (location.protocol !== 'file:') {
+      try {
+        const res = await fetch('data/heroes.json');
+        if (res.ok) return await res.json();
+      } catch (err) {
+        console.warn('Fetch heroes failed, trying fallback:', err);
+      }
+    }
+
+    if (Array.isArray(window.__ML_HEROES__)) {
+      return window.__ML_HEROES__;
+    }
+
+    throw new Error('Heroes data unavailable');
+  }
+
+  async function loadNotes() {
+    if (location.protocol !== 'file:') {
+      try {
+        const res = await fetch('heroes-list.md');
+        if (res.ok) return await res.text();
+      } catch (err) {
+        console.warn('Fetch notes failed, trying fallback:', err);
+      }
+    }
+
+    if (typeof window.__ML_HERO_NOTES__ === 'string') {
+      return window.__ML_HERO_NOTES__;
+    }
+
+    return '';
   }
 
   function matchLine(text, regex) {

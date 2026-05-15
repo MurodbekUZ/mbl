@@ -1,11 +1,26 @@
 <!DOCTYPE html>
-<html lang="uz" class="dark">
+<html lang="uz">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MLBB Portal | Professional Hero Database</title>
-    <meta name="description" content="Mobile Legends: Bang Bang barcha qahramonlar, buildlar va strategiyalar bazasi.">
+    <meta name="theme-color" content="#020617">
+    <title>ML Portal — Mobile Legends qahramonlar bazasi, buildlar va statistikalar</title>
+    <meta name="description"
+        content="Mobile Legends: Bang Bang barcha 124+ qahramonlar bazasi. Professional buildlar, skillar, statistikalar, qiyinchilik darajalari va o'yin maslahatlari — o'zbek tilida.">
+    <meta name="keywords" content="Mobile Legends, MLBB, qahramonlar, build, item, skill, o'zbek, hero database, meta builds">
+    <meta name="author" content="ML Portal">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ML Portal — Mobile Legends qahramonlar bazasi">
+    <meta property="og:description" content="124+ MLBB qahramonlari, professional buildlar va statistikalar bir joyda.">
+    <meta property="og:locale" content="uz_UZ">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%233b82f6'/%3E%3Ctext x='50' y='68' font-family='Arial Black' font-size='62' fill='white' text-anchor='middle' font-style='italic' font-weight='900'%3EM%3C/text%3E%3C/svg%3E">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,229 +30,369 @@
         rel="stylesheet">
 
     <!-- Icons -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Styles -->
     <link rel="stylesheet" href="assets/styles.css">
 </head>
 
-<body class="bg-slate-950 text-slate-100">
+<body>
     <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3">
-                <div
-                    class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center font-orbitron font-black text-xl italic shadow-lg shadow-blue-500/50">
-                    M</div>
-                <span class="font-orbitron font-black tracking-tighter text-xl">PORTAL</span>
+    <nav id="navbar">
+        <div class="nav-inner">
+            <a href="#home" class="nav-brand">
+                <div class="nav-logo">M</div>
+                <span class="font-orbitron">ML PORTAL</span>
             </a>
 
-            <div class="hidden md:flex items-center gap-8">
+            <div class="nav-links" id="nav-links">
                 <a href="#home" class="nav-link active">Asosiy</a>
                 <a href="#heroes" class="nav-link">Qahramonlar</a>
+                <a href="#favorites" class="nav-link">Sevimlilar</a>
                 <a href="#guides" class="nav-link">Qo'llanmalar</a>
-                <a href="#community" class="nav-link">Jamoa</a>
+                <a href="#emblems" class="nav-link">Emblemalar</a>
+                <a href="#tools" class="nav-link">Asboblar</a>
             </div>
 
-            <button
-                class="md:hidden w-12 h-12 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10"
-                id="mobile-menu-btn">
-                <i class="fa-solid fa-bars-staggered text-xl"></i>
+            <button class="mobile-btn" id="mobile-menu-btn" aria-label="Menyu">
+                <i class="fa-solid fa-bars"></i>
             </button>
         </div>
     </nav>
 
     <main>
-        <!-- Home Section -->
-        <section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <!-- Hero / Home -->
+        <section id="home" class="home-section">
             <div class="hero-glow"></div>
-            <div class="section relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-                <div class="space-y-8 animate-fadeInUp">
-                    <span class="section-subtitle">Mobile Legends Arena</span>
-                    <h1 class="section-title">Cheksiz Janglar,<br><span class="text-blue-500">Professional</span>
-                        Tajriba</h1>
-                    <p class="text-slate-400 text-lg max-w-lg">120+ qahramonlar, real-vaqt statistikalar va professional
-                        buildlar. O'yiningizni yangi darajaga olib chiqing.</p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#heroes" class="btn btn-primary">Qahramonlarni ko'rish <i
-                                class="fa-solid fa-arrow-right"></i></a>
-                        <a href="#guides" class="btn btn-secondary">Strategiyalar</a>
+            <div class="home-grid">
+                <div class="home-text">
+                    <span class="section-subtitle">Mobile Legends: Bang Bang</span>
+                    <h1 class="hero-title">
+                        Professional
+                        <span class="grad-blue">Qahramonlar</span>
+                        Ma'lumotlar Bazasi
+                    </h1>
+                    <p class="home-lead">
+                        Barcha qahramonlar, professional buildlar, skillar va statistikalarni
+                        bitta saytda toping. <strong>Reklama yo'q, ro'yxatdan o'tish shart emas.</strong>
+                    </p>
+                    <div class="home-cta">
+                        <a href="#heroes" class="btn btn-primary">
+                            Qahramonlarni ko'rish <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <button class="btn btn-secondary" id="random-pick-btn">
+                            <i class="fa-solid fa-shuffle"></i> Tasodifiy tanlash
+                        </button>
+                    </div>
+
+                    <div class="stat-row" id="stat-row">
+                        <div class="stat-block">
+                            <div class="stat-num" id="stat-heroes">—</div>
+                            <div class="stat-label-sm">Qahramonlar</div>
+                        </div>
+                        <div class="stat-block">
+                            <div class="stat-num">6</div>
+                            <div class="stat-label-sm">Rollar</div>
+                        </div>
+                        <div class="stat-block">
+                            <div class="stat-num" id="stat-skills">—</div>
+                            <div class="stat-label-sm">Skillar</div>
+                        </div>
+                        <div class="stat-block">
+                            <div class="stat-num" id="stat-items">—</div>
+                            <div class="stat-label-sm">Buildlar</div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="relative hidden lg:block">
-                    <div class="absolute inset-0 bg-blue-500/20 rounded-full blur-[120px]"></div>
-                    <img src="https://wallpapers.com/images/hd/mobile-legends-logo-over-earth-8ir7z2e4a2enyfzl.jpg"
-                        alt="MLBB Arena"
-                        class="rounded-[4rem] border border-white/10 shadow-2xl relative z-10 opacity-80">
+                <div class="home-art" aria-hidden="true">
+                    <div class="art-glow"></div>
+                    <div class="art-ring ring-1"></div>
+                    <div class="art-ring ring-2"></div>
+                    <div class="art-ring ring-3"></div>
+                    <div class="art-core">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Heroes Section -->
+        <!-- Heroes -->
         <section id="heroes" class="section">
             <div class="section-header">
                 <span class="section-subtitle">Ma'lumotlar Bazasi</span>
                 <h2 class="section-title">Qahramonlar</h2>
-                <p class="section-description">Barcha MLBB qahramonlari haqida to'liq ma'lumot, skillar statistikalar va
-                    tavsiyalar.</p>
+                <p class="section-description">
+                    Qidiruv, rol bo'yicha filter va saralash. Har bir qahramon kartasini
+                    bosib batafsil ma'lumot, skillar va tavsiya etilgan buildni ko'ring.
+                </p>
             </div>
 
             <div class="controls-container">
                 <div class="search-wrapper">
                     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                    <input type="text" id="hero-search" placeholder="Qahramon ismini yozing..." class="search-input">
+                    <input type="text" id="hero-search" placeholder="Qahramon ismini yozing..." class="search-input"
+                        autocomplete="off">
+                    <button class="search-clear" id="search-clear" aria-label="Tozalash">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
                 </div>
 
-                <div class="filter-chips" id="role-filters">
-                    <button class="chip active" data-role="all">Hammasi</button>
-                    <button class="chip" data-role="Tank">Tank</button>
-                    <button class="chip" data-role="Fighter">Fighter</button>
-                    <button class="chip" data-role="Assassin">Assassin</button>
-                    <button class="chip" data-role="Mage">Mage</button>
-                    <button class="chip" data-role="Marksman">Marksman</button>
-                    <button class="chip" data-role="Support">Support</button>
+                <div class="controls-row">
+                    <div class="filter-chips" id="role-filters">
+                        <button class="chip active" data-role="all">
+                            <i class="fa-solid fa-grid-2"></i> Hammasi
+                        </button>
+                        <button class="chip" data-role="Tank"><i class="fa-solid fa-shield"></i> Tank</button>
+                        <button class="chip" data-role="Fighter"><i class="fa-solid fa-fist-raised"></i> Fighter</button>
+                        <button class="chip" data-role="Assassin"><i class="fa-solid fa-mask"></i> Assassin</button>
+                        <button class="chip" data-role="Mage"><i class="fa-solid fa-hat-wizard"></i> Mage</button>
+                        <button class="chip" data-role="Marksman"><i class="fa-solid fa-crosshairs"></i> Marksman</button>
+                        <button class="chip" data-role="Support"><i class="fa-solid fa-hand-holding-medical"></i> Support</button>
+                    </div>
+
+                    <div class="sort-wrapper">
+                        <label for="sort-select" class="sr-only">Saralash</label>
+                        <i class="fa-solid fa-arrow-down-wide-short"></i>
+                        <select id="sort-select" class="sort-select">
+                            <option value="name">Ism (A–Z)</option>
+                            <option value="name-desc">Ism (Z–A)</option>
+                            <option value="diff-asc">Qiyinligi (oson → qiyin)</option>
+                            <option value="diff-desc">Qiyinligi (qiyin → oson)</option>
+                            <option value="attack">Hujum kuchi</option>
+                            <option value="durability">Mustahkamlik</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="result-info">
+                    <span id="result-count">—</span>
+                    <button class="link-btn" id="reset-filters" hidden>
+                        <i class="fa-solid fa-rotate-left"></i> Filtrlarni tozalash
+                    </button>
                 </div>
             </div>
 
-            <div id="hero-grid">
-                <!-- Data loaded via JS -->
-                <div class="col-span-full flex flex-col items-center py-20 opacity-50">
-                    <div class="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mb-4">
-                    </div>
+            <div id="hero-grid" class="hero-grid">
+                <div class="loading-state">
+                    <div class="spinner"></div>
                     <p>Qahramonlar yuklanmoqda...</p>
                 </div>
             </div>
         </section>
 
-        <!-- Guides Section -->
-        <section id="guides" class="section bg-slate-900/30">
+        <!-- Favorites -->
+        <section id="favorites" class="section section-alt">
             <div class="section-header">
-                <span class="section-subtitle">Mastery</span>
-                <h2 class="section-title">O'yin Strategiyalari</h2>
-                <p class="section-description">Professional o'yinchilardan xarita nazorati va counter-pick sirlarini
-                    o'rganing.</p>
+                <span class="section-subtitle">Saqlangan</span>
+                <h2 class="section-title">Sevimli qahramonlar</h2>
+                <p class="section-description">
+                    Qahramon kartasidagi <i class="fa-solid fa-heart" style="color:#f43f5e"></i> tugmasini bosib
+                    sevimlilarga qo'shing. Ma'lumotlar brauzeringizda mahalliy saqlanadi.
+                </p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass p-8 rounded-[2.5rem] border border-white/5 space-y-4">
-                    <div
-                        class="w-12 h-12 rounded-2xl bg-blue-500/20 flex items-center justify-center text-blue-500 text-xl">
-                        <i class="fa-solid fa-map"></i></div>
-                    <h3 class="text-xl font-bold">Xarita Nazorati</h3>
-                    <p class="text-slate-400">Professional rotatsiya va lane management sirlari.</p>
-                </div>
-                <div class="glass p-8 rounded-[2.5rem] border border-white/5 space-y-4">
-                    <div
-                        class="w-12 h-12 rounded-2xl bg-purple-500/20 flex items-center justify-center text-purple-500 text-xl">
-                        <i class="fa-solid fa-bolt"></i></div>
-                    <h3 class="text-xl font-bold">Counter Picks</h3>
-                    <p class="text-slate-400">Har bir qahramonga qarshi eng yaxshi drafni tanlang.</p>
-                </div>
-                <div class="glass p-8 rounded-[2.5rem] border border-white/5 space-y-4">
-                    <div
-                        class="w-12 h-12 rounded-2xl bg-rose-500/20 flex items-center justify-center text-rose-500 text-xl">
-                        <i class="fa-solid fa-shield-heart"></i></div>
-                    <h3 class="text-xl font-bold">Meta Buildlar</h3>
-                    <p class="text-slate-400">Oxirgi patchdagi eng kuchli item kombinatsiyalari.</p>
+            <div id="favorites-grid" class="hero-grid">
+                <div class="empty-state" id="favorites-empty">
+                    <i class="fa-regular fa-heart"></i>
+                    <p>Hali sevimli qahramon qo'shilmagan.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Community Section -->
-        <section id="community" class="section">
+        <!-- Guides -->
+        <section id="guides" class="section">
             <div class="section-header">
-                <span class="section-subtitle">Hamjamiyat</span>
-                <h2 class="section-title">O'yinchilar Jamoasi</h2>
-                <p class="section-description">O'z tajribangiz bilan o'rtoqlashing va boshqa o'yinchilarning buildlarini
-                    ko'ring.</p>
+                <span class="section-subtitle">Mastery</span>
+                <h2 class="section-title">Rol bo'yicha qo'llanmalar</h2>
+                <p class="section-description">
+                    Har bir rol uchun asosiy vazifa, eng yaxshi pozitsiya va boshlang'ich qahramonlar.
+                </p>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-12">
-                <div class="glass p-10 rounded-[3rem] border border-white/5">
-                    <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
-                        <i class="fa-solid fa-plus-circle text-blue-500"></i> Build Yuborish
-                    </h3>
-                    <form id="build-form" class="space-y-6">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div class="space-y-2">
-                                <label class="text-sm font-semibold text-slate-400">ISMINGIZ</label>
-                                <input type="text" placeholder="Murodbek..."
-                                    class="w-full bg-slate-900 border border-white/10 rounded-2xl p-4 focus:border-blue-500 focus:outline-none transition-all">
-                            </div>
-                            <div class="space-y-2">
-                                <label class="text-sm font-semibold text-slate-400">QAHRAMON</label>
-                                <select
-                                    class="w-full bg-slate-900 border border-white/10 rounded-2xl p-4 focus:border-blue-500 focus:outline-none transition-all appearance-none">
-                                    <option>Fanny</option>
-                                    <option>Gusion</option>
-                                    <option>Chou</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-sm font-semibold text-slate-400">BUILD TAVSIFI</label>
-                            <textarea rows="4" placeholder="Eng yaxshi burst build..."
-                                class="w-full bg-slate-900 border border-white/10 rounded-2xl p-4 focus:border-blue-500 focus:outline-none transition-all"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-full">Yuborish</button>
-                    </form>
+            <div class="guide-grid">
+                <article class="guide-card">
+                    <div class="guide-icon" style="--c: #3b82f6">
+                        <i class="fa-solid fa-shield"></i>
+                    </div>
+                    <h3>Tank</h3>
+                    <p class="guide-role">Roaming / Front-line</p>
+                    <ul class="guide-list">
+                        <li>Jamoangizni himoya qiling va initiatsiya boshlang</li>
+                        <li>Vision (xarita ko'rinishi) va rotatsiyaga e'tibor bering</li>
+                        <li>Boshlovchilar uchun: <strong>Tigreal</strong>, <strong>Akai</strong>, <strong>Franco</strong></li>
+                    </ul>
+                </article>
+
+                <article class="guide-card">
+                    <div class="guide-icon" style="--c: #ef4444">
+                        <i class="fa-solid fa-fist-raised"></i>
+                    </div>
+                    <h3>Fighter</h3>
+                    <p class="guide-role">Exp lane / Bruiser</p>
+                    <ul class="guide-list">
+                        <li>Exp lane'da farm qiling, keyin team-fightga qo'shiling</li>
+                        <li>Balance: zarar va himoya — har ikkalasi muhim</li>
+                        <li>Boshlovchilar uchun: <strong>Sun</strong>, <strong>Balmond</strong>, <strong>Ruby</strong></li>
+                    </ul>
+                </article>
+
+                <article class="guide-card">
+                    <div class="guide-icon" style="--c: #a855f7">
+                        <i class="fa-solid fa-mask"></i>
+                    </div>
+                    <h3>Assassin</h3>
+                    <p class="guide-role">Jungle / Burst</p>
+                    <ul class="guide-list">
+                        <li>Jungle farm qiling va lane'larga gank qiling</li>
+                        <li>Asosan zaif maqsadlarni (carry, mage) o'ldiring</li>
+                        <li>Boshlovchilar uchun: <strong>Saber</strong>, <strong>Karina</strong>, <strong>Hayabusa</strong></li>
+                    </ul>
+                </article>
+
+                <article class="guide-card">
+                    <div class="guide-icon" style="--c: #06b6d4">
+                        <i class="fa-solid fa-hat-wizard"></i>
+                    </div>
+                    <h3>Mage</h3>
+                    <p class="guide-role">Mid lane / Burst</p>
+                    <ul class="guide-list">
+                        <li>Mid lane'ni boshqaring va wave clear qiling</li>
+                        <li>Pozitsiya: orqada turing, lekin spell range'da</li>
+                        <li>Boshlovchilar uchun: <strong>Eudora</strong>, <strong>Aurora</strong>, <strong>Kagura</strong></li>
+                    </ul>
+                </article>
+
+                <article class="guide-card">
+                    <div class="guide-icon" style="--c: #f59e0b">
+                        <i class="fa-solid fa-crosshairs"></i>
+                    </div>
+                    <h3>Marksman</h3>
+                    <p class="guide-role">Gold lane / DPS</p>
+                    <ul class="guide-list">
+                        <li>Gold lane'da farm qiling — late-game uchun</li>
+                        <li>Tanklar orqasida turing, doimiy zarar bering</li>
+                        <li>Boshlovchilar uchun: <strong>Layla</strong>, <strong>Miya</strong>, <strong>Bruno</strong></li>
+                    </ul>
+                </article>
+
+                <article class="guide-card">
+                    <div class="guide-icon" style="--c: #10b981">
+                        <i class="fa-solid fa-hand-holding-medical"></i>
+                    </div>
+                    <h3>Support</h3>
+                    <p class="guide-role">Roaming / Utility</p>
+                    <ul class="guide-list">
+                        <li>Marksman'ni himoya qiling, vision oling</li>
+                        <li>Crowd-control va heal/shield bering</li>
+                        <li>Boshlovchilar uchun: <strong>Angela</strong>, <strong>Estes</strong>, <strong>Rafaela</strong></li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="emblems" class="section section-alt">
+            <div class="section-header">
+                <span class="section-subtitle">Custom Emblem</span>
+                <h2 class="section-title">Emblemalar va talentlar</h2>
+                <p class="section-description">
+                    heroes-list.md asosidagi emblem tavsiyalari. Har bir rol uchun mos emblem va mashhur talent yo'nalishlari.
+                </p>
+            </div>
+
+            <div id="emblem-grid" class="emblem-grid">
+                <div class="loading-state">
+                    <div class="spinner"></div>
+                    <p>Emblemalar yuklanmoqda...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools -->
+        <section id="tools" class="section section-alt">
+            <div class="section-header">
+                <span class="section-subtitle">Qo'shimcha</span>
+                <h2 class="section-title">Foydali asboblar</h2>
+                <p class="section-description">
+                    Qaror qabul qila olmayotgan bo'lsangiz — ushbu asboblar yordam beradi.
+                </p>
+            </div>
+
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon" style="--c:#3b82f6">
+                        <i class="fa-solid fa-shuffle"></i>
+                    </div>
+                    <h3>Tasodifiy qahramon</h3>
+                    <p>Qaysi qahramonni o'ynashni bilmaysizmi? Bittasini tasodifan tanlab beramiz.</p>
+                    <div class="tool-actions">
+                        <select id="random-role" class="sort-select">
+                            <option value="all">Har qanday rol</option>
+                            <option value="Tank">Tank</option>
+                            <option value="Fighter">Fighter</option>
+                            <option value="Assassin">Assassin</option>
+                            <option value="Mage">Mage</option>
+                            <option value="Marksman">Marksman</option>
+                            <option value="Support">Support</option>
+                        </select>
+                        <button class="btn btn-primary btn-sm" id="random-btn">Tanlash</button>
+                    </div>
                 </div>
 
-                <div class="space-y-6">
-                    <h3 class="text-2xl font-bold mb-6">Top O'yinchilar</h3>
-                    <div class="space-y-4" id="top-players">
-                        <!-- Content -->
-                        <div class="glass p-6 rounded-2xl border border-white/5 flex items-center justify-between">
-                            <div class="flex items-center gap-4">
-                                <div
-                                    class="w-12 h-12 rounded-full bg-gradient-to-tr from-blue-500 to-purple-500 flex items-center justify-center font-bold">
-                                    A</div>
-                                <div>
-                                    <h4 class="font-bold">AliDev</h4>
-                                    <p class="text-sm text-slate-500">Gusion Main • 65% Winrate</p>
-                                </div>
-                            </div>
-                            <div class="text-blue-500"><i class="fa-solid fa-crown"></i></div>
-                        </div>
-                        <div class="glass p-6 rounded-2xl border border-white/5 flex items-center justify-between">
-                            <div class="flex items-center gap-4">
-                                <div
-                                    class="w-12 h-12 rounded-full bg-gradient-to-tr from-rose-500 to-orange-500 flex items-center justify-center font-bold">
-                                    S</div>
-                                <div>
-                                    <h4 class="font-bold">SaraPro</h4>
-                                    <p class="text-sm text-slate-500">Angela Main • 72% Winrate</p>
-                                </div>
-                            </div>
-                            <div class="text-slate-500"><i class="fa-solid fa-medal"></i></div>
-                        </div>
+                <div class="tool-card">
+                    <div class="tool-icon" style="--c:#a855f7">
+                        <i class="fa-solid fa-code-compare"></i>
                     </div>
+                    <h3>Qahramonlarni solishtirish</h3>
+                    <p>2 ta qahramonni yonma-yon statistikasi bo'yicha solishtiring.</p>
+                    <div class="tool-actions">
+                        <select id="compare-a" class="sort-select"></select>
+                        <select id="compare-b" class="sort-select"></select>
+                        <button class="btn btn-primary btn-sm" id="compare-btn">Solishtirish</button>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon" style="--c:#10b981">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <h3>Rollar statistikasi</h3>
+                    <p>Bazadagi qahramonlarning rollar bo'yicha taqsimoti.</p>
+                    <div id="role-stats" class="role-stats"></div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Modal -->
-    <div id="hero-modal" class="modal">
+    <!-- Hero modal -->
+    <div id="hero-modal" class="modal" role="dialog" aria-modal="true">
         <div class="modal-overlay"></div>
         <div class="modal-content">
-            <button class="modal-close"><i class="fa-solid fa-xmark"></i></button>
-            <div id="modal-body">
-                <!-- Content injected via JS -->
-            </div>
+            <button class="modal-close" aria-label="Yopish"><i class="fa-solid fa-xmark"></i></button>
+            <div id="modal-body"></div>
         </div>
     </div>
 
-    <footer class="py-20 border-t border-white/5 bg-slate-950">
-        <div class="max-w-7xl mx-auto px-6 text-center space-y-8">
-            <div class="font-orbitron font-black text-2xl tracking-tighter">ML PORTAL</div>
-            <div class="flex justify-center gap-8 text-2xl text-slate-500">
-                <a href="#" class="hover:text-blue-500 transition-colors"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#" class="hover:text-pink-500 transition-colors"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="hover:text-sky-500 transition-colors"><i class="fa-brands fa-discord"></i></a>
-                <a href="#" class="hover:text-blue-400 transition-colors"><i class="fa-brands fa-telegram"></i></a>
-            </div>
-            <p class="text-slate-500 text-sm">© 2026 Mobile Legends Portal. Barcha huquqlar himoyalangan.</p>
+    <!-- Compare modal -->
+    <div id="compare-modal" class="modal" role="dialog" aria-modal="true">
+        <div class="modal-overlay"></div>
+        <div class="modal-content modal-content-sm">
+            <button class="modal-close" aria-label="Yopish"><i class="fa-solid fa-xmark"></i></button>
+            <div id="compare-body"></div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand font-orbitron">ML PORTAL</div>
+            <p class="footer-text">
+                Bu sayt Mobile Legends: Bang Bang o'yini ishqibozlari uchun yaratilgan
+                norasmiy ma'lumot bazasi. Moonton kompaniyasi bilan bog'liq emas.
+            </p>
+            <p class="footer-meta">© <span id="footer-year"></span> ML Portal · Frontend on Vercel · Open source</p>
         </div>
     </footer>
 

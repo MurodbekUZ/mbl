@@ -1,0 +1,22 @@
+{
+  "name": "ML Portal",
+  "short_name": "MLP",
+  "theme_color": "#020617",
+  "background_color": "#020617",
+  "display": "standalone",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='42' fill='%233b82f6'/%3E%3Cpath d='M52 138V54h22l22 34 22-34h22v84h-21V92l-20 30h-6L73 92v46H52z' fill='white'/%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='112' fill='%233b82f6'/%3E%3Cpath d='M138 369V144h59l59 92 59-92h59v225h-56V244l-54 79h-16l-54-79v125h-56z' fill='white'/%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

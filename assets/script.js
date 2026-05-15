@@ -51,15 +51,19 @@
     setupHomeStats();
 
     try {
-      const [res, notesRes] = await Promise.all([
-        fetch('data/heroes.json'),
-        fetch('heroes-list.md'),
-      ]);
+      const res = await fetch('data/heroes.json');
       if (!res.ok) throw new Error('HTTP ' + res.status);
       state.heroes = await res.json();
-      if (notesRes.ok) {
-        hydrateHeroNotes(await notesRes.text());
+
+      try {
+        const notesRes = await fetch('heroes-list.md');
+        if (notesRes.ok) {
+          hydrateHeroNotes(await notesRes.text());
+        }
+      } catch (notesErr) {
+        console.warn('Heroes notes load skipped:', notesErr);
       }
+
       onDataLoaded();
     } catch (err) {
       console.error('Heroes load failed:', err);
